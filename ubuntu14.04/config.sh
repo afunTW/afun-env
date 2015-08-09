@@ -14,8 +14,18 @@ read -p "Press any key to continue..." -n1 -s
 
 echo -n ""
 echo "##########"
+echo "Bind the github account"
+read -p "Please enter your github user email: " GITHUB_EMAIL
+read -p "Please enter your github user name: " GITHUB_NAME
+git config --global user.email "$GITHUB_EMAIL"
+git config --global user.name "$GITHUB_NAME"
+git config --global credential.helper "cache --timeout=3600000"
+
+echo -n ""
+echo "##########"
 echo "# Installing NodeJS, System Packages, Creating User and Setup Environment."
 echo "##########"
+
 echo -n ""
 echo "##########"
 echo "Installing system package"
@@ -40,4 +50,4 @@ echo "* sudo gedit /etc/dhcp/dhclient.conf"
 echo "* append 'prepend domain-name-servers'"
 echo "* system setting > network > edit connection"
 echo "* switch connection method to 'Automatic (DHCP) address only'"
-echo "* DNS server: 8.8.8.8, 8.8.4.4"
+# echo "* DNS server: 8.8.8.8, 8.8.4.4"
