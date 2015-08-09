@@ -42,6 +42,38 @@ done
 
 echo -n ""
 echo "##########"
+echo "Build the workspace"
+mkdir ~/Documents/project
+
+echo -n ""
+echo "##########"
+echo "Installing Rust(1.2.0) and cargo"
+curl -sSf https://static.rust-lang.org/rustup.sh | sh
+mkdir ~/Documents/project/rust
+original_path=$(pwd)
+cd ~/Documents/project/rust
+git clone https://github.com/rust-lang/cargo
+cd original_path
+
+echo -n ""
+echo "##########"
+echo "Installing IDE, Messenger(Telegram)"
+sudo add-apt-repository ppa:webupd8team/atom
+sudo add-apt-repository ppa:atareao/telegram
+sudo apt-get update
+for i in atom telegram
+do
+	sudo apt-get -y install i
+done
+apm install language-rust
+
+echo -n ""
+echo "##########"
+echo "Installing dropbox"
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+
+echo -n ""
+echo "##########"
 echo "Now you need to:"
 echo "* Install the newest virtualbox and virtualbox extension pack as well"
 echo "* Get the ubuntu ISO from http://ftp.ubuntu-tw.org/"
@@ -50,4 +82,4 @@ echo "* sudo gedit /etc/dhcp/dhclient.conf"
 echo "* append 'prepend domain-name-servers'"
 echo "* system setting > network > edit connection"
 echo "* switch connection method to 'Automatic (DHCP) address only'"
-# echo "* DNS server: 8.8.8.8, 8.8.4.4"
+echo "* DNS server: 8.8.8.8, 8.8.4.4"
