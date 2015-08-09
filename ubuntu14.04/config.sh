@@ -47,6 +47,12 @@ mkdir ~/Documents/project
 
 echo -n ""
 echo "##########"
+echo "Instaling easy_install and pip"
+python ez_setup.py
+easy_install pip
+
+echo -n ""
+echo "##########"
 echo "Installing Rust(1.2.0) and cargo"
 curl -sSf https://static.rust-lang.org/rustup.sh | sh
 mkdir ~/Documents/project/rust
