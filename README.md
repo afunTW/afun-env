@@ -1,6 +1,16 @@
 # linux_env_config
 My own backup setting on ubuntu.
 
+## Running
+```sh
+git clone https://github.com/endlessproof/linux_env_config.git
+cd linux_env_config
+
+// choose the system version, e.x. ubuntu 14.04
+cd ubuntu14.04
+./config
+```
+
 ## Including(ubuntu 14.04)
 * [git](https://git-scm.com/):  version control
 * [nodejs](https://nodejs.org/):  perfect for data-intensive real-time applications that run across distributed devices
