@@ -13,14 +13,14 @@ sudo apt-get install -y libgmp3-dev
 cd rsatool
 sudo python setup.py install
 cd ..
-cp -r rsatool ~/Downloads/tool
+sudo cp -r rsatool ~/Downloads/tool
 
 echo -n ""
 echo "##########"
 echo "Installing pkcrack"
 tar zxvf pkcrack-1.2.2.tar.gz
 rm pkcrack-1.2.2.tar.gz
-sudo cp -r pkcrack ~/Downloads/tool
+sudo cp -r pkcrack-1.2.2 ~/Downloads/tool
 
 echo -n ""
 echo "##########"
