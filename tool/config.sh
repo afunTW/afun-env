@@ -9,7 +9,9 @@ echo -n ""
 echo "##########"
 echo "Installing rsatool"
 git clone https://github.com/ius/rsatool.git
-python rsatool/setup.py
+sudo apt-get install -y python-dev
+sudo apt-get install -y libgmp3-dev
+sudo python rsatool/setup.py install
 
 echo -n ""
 echo "##########"
