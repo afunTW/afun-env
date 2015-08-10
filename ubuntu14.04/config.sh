@@ -42,6 +42,13 @@ done
 
 echo -n ""
 echo "##########"
+echo "Setting up the Google public DNS"
+if [ "cat /etc/dhcp/dhclient.conf | grep -E 'prepend domain-name-servers ([8]{1}\.){2}([48]\.)([48])' | wc -l" == "1" ];then
+	sudo sed -i '/#prepend domain-name-servers/a prepend domain-name-servers 8.8.8.8, 8.8.4.4' /etc/dhcp/dhclient.conf
+fi
+
+echo -n ""
+echo "##########"
 echo "Build the workspace"
 mkdir ~/Documents/project
 
@@ -74,7 +81,6 @@ done
 apm install language-rust
 sudo mv Telegram /opt
 
-
 echo -n ""
 echo "##########"
 echo "Installing dropbox"
@@ -85,9 +91,7 @@ echo "##########"
 echo "Now you need to:"
 echo "* Install the newest virtualbox and virtualbox extension pack as well"
 echo "* Get the ubuntu ISO from http://ftp.ubuntu-tw.org/"
-echo "* Setting up the Google Public DNS(8.8.8.8, 8.8.4.4)"
-echo "* sudo gedit /etc/dhcp/dhclient.conf"
-echo "* append 'prepend domain-name-servers'"
+echo "* Recommended to set google public dns server on the network connection"
 echo "* system setting > network > edit connection"
 echo "* switch connection method to 'Automatic (DHCP) address only'"
 echo "* DNS server: 8.8.8.8, 8.8.4.4"
