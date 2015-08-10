@@ -56,10 +56,10 @@ echo "##########"
 echo "Installing Rust(1.2.0) and cargo"
 curl -sSf https://static.rust-lang.org/rustup.sh | sh
 mkdir ~/Documents/project/rust
-original_path=$(pwd)
+current_path=$(pwd)
 cd ~/Documents/project/rust
 git clone https://github.com/rust-lang/cargo
-cd original_path
+cd current_path
 
 echo -n ""
 echo "##########"
@@ -72,6 +72,8 @@ do
 	sudo apt-get -y install i
 done
 apm install language-rust
+sudo mv Telegram /opt
+
 
 echo -n ""
 echo "##########"
