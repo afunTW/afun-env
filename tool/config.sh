@@ -3,7 +3,6 @@
 
 mkdir ~/Downloads/tool
 current_path=$(pwd)
-cd ~/Downloads/tool
 
 echo -n ""
 echo "##########"
@@ -11,14 +10,17 @@ echo "Installing rsatool"
 git clone https://github.com/ius/rsatool.git
 sudo apt-get install -y python-dev
 sudo apt-get install -y libgmp3-dev
-sudo python rsatool/setup.py install
+cd rsatool
+sudo python setup.py install
+cd ..
+cp -r rsatool ~/Downloads/tool
 
 echo -n ""
 echo "##########"
 echo "Installing pkcrack"
-cp current_path/pkcrack-1.2.2.tar.gz .
 tar zxvf pkcrack-1.2.2.tar.gz
 rm pkcrack-1.2.2.tar.gz
+sudo cp -r pkcrack ~/Downloads/tool
 
 echo -n ""
 echo "##########"
