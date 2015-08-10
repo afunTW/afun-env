@@ -20,3 +20,4 @@
 * [atom](https://atom.io/): A hackable text editor, open source. We also install the support pack for rust in atom.
 * [cargo](https://github.com/rust-lang/cargo):  Cargo is distributed by default with Rust, so if you've got rustc installed locally you probably also have cargo installed locally.
 * [telegram](https://telegram.org/): Messenger
+* [openssh](http://www.openssh.com/): openssh-server and openssh-client
