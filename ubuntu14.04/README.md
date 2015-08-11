@@ -21,3 +21,4 @@
 * [cargo](https://github.com/rust-lang/cargo):  Cargo is distributed by default with Rust, so if you've got rustc installed locally you probably also have cargo installed locally.
 * [telegram](https://telegram.org/): Messenger
 * [openssh](http://www.openssh.com/): openssh-server and openssh-client
+* [tlp](http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html):  advanced power management for Linux without the need to understand every technical detail
