@@ -14,3 +14,6 @@ cd ubuntu14.04
 ## Including
 * ubuntu14.04: system packages, github binding, IDE, Messenger, dropbox
 * tool: bunch of useful tool, special for information security
+
+## Note
+Don't use vimplugin, it's unavaliable sofar
