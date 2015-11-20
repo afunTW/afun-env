@@ -5,3 +5,6 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # setting the .vimrc
 cat vimrcsetting >> ~/.vimrc
+
+# Install plugin
+vim +PluginInstall +qall
