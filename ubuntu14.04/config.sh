@@ -36,7 +36,7 @@ curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo add-apt-repository ppa:indicator-multiload/stable-daily
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
-for i in git nodejs mongodb make gcc ssh vim automake unzip tree aptitude indicator-multiload hime bumblebee bumblebee-nvidia primus linux-headers-generic openssh-server openssh-client tlp tlp-rdw
+for i in git nodejs make gcc ssh vim automake unzip tree aptitude indicator-multiload hime bumblebee bumblebee-nvidia primus linux-headers-generic openssh-server openssh-client tlp tlp-rdw
 do
 	sudo apt-get -y install $i
 done
@@ -62,16 +62,6 @@ easy_install pip
 
 echo -n ""
 echo "##########"
-echo "Installing Rust(1.2.0) and cargo"
-curl -sSf https://static.rust-lang.org/rustup.sh | sh
-mkdir ~/Documents/project/rust
-current_path=$(pwd)
-cd ~/Documents/project/rust
-git clone https://github.com/rust-lang/cargo
-cd current_path
-
-echo -n ""
-echo "##########"
 echo "Installing IDE, Messenger(Telegram)"
 sudo add-apt-repository ppa:webupd8team/atom
 sudo add-apt-repository ppa:atareao/telegram
@@ -82,11 +72,6 @@ do
 done
 apm install language-rust
 sudo mv Telegram /opt
-
-echo -n ""
-echo "##########"
-echo "Installing dropbox"
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
 echo -n ""
 echo "##########"
