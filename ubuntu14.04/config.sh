@@ -43,18 +43,6 @@ done
 
 echo -n ""
 echo "##########"
-echo "Setting up the Google public DNS"
-if [ "cat /etc/dhcp/dhclient.conf | grep -E 'prepend domain-name-servers ([8]{1}\.){2}([48]\.)([48])' | wc -l" != "1" ];then
-	sudo sed -i '/#prepend domain-name-servers/a prepend domain-name-servers 8.8.8.8, 8.8.4.4' /etc/dhcp/dhclient.conf
-fi
-
-echo -n ""
-echo "##########"
-echo "Build the workspace"
-mkdir ~/Documents/project
-
-echo -n ""
-echo "##########"
 echo "Instaling easy_install and pip"
 sudo apt-get install -y python-setuptools
 python ez_setup.py
@@ -70,7 +58,6 @@ for i in atom telegram
 do
 	sudo apt-get -y install i
 done
-apm install language-rust
 sudo mv Telegram /opt
 
 echo -n ""
