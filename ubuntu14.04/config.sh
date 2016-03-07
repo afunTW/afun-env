@@ -41,6 +41,7 @@ do
 	sudo apt-get -y install $i
 done
 
+# python dev
 echo -n ""
 echo "##########"
 echo "Instaling easy_install and pip"
