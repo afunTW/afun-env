@@ -49,3 +49,13 @@ filetype plugin indent on    " 必須 加載vim自帶和插件相應的語法和
 
 " 查閱 :h vundle 獲取更多細節和wiki以及FAQ
 " 將你自己對非插件片段放在這行之後
+
+:set ai
+":set background=dark
+:set cursorline
+:set enc=utf8
+:set wrap
+:set scrolloff=3
+:set cursorline
+:set ruler
+:set number
