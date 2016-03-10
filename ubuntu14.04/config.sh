@@ -36,7 +36,7 @@ curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo add-apt-repository ppa:indicator-multiload/stable-daily
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
-for i in git nodejs make gcc ssh vim automake unzip tree aptitude indicator-multiload hime bumblebee bumblebee-nvidia primus linux-headers-generic openssh-server openssh-client tlp tlp-rdw
+for i in git nodejs make gcc ssh vim automake unzip tree aptitude indicator-multiload hime bumblebee bumblebee-nvidia primus linux-headers-generic openssh-server openssh-client tlp tlp-rdw tmux htop
 do
 	sudo apt-get -y install $i
 done
