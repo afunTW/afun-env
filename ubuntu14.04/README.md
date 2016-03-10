@@ -9,8 +9,6 @@
 * automake
 * unzip
 * tree
-* rust
-* dropbox
 * easy_install
 * pip
 * indicator-multiload:  system monitor indicator on menu bar
@@ -18,7 +16,8 @@
 * [bumblebee](https://wiki.ubuntu.com/Bumblebee):  Using Bumblebee, you can use your NVIDIA card for rendering graphics which will be displayed using the Intel card. Also power saving.
 * [aptitude](https://help.ubuntu.com/lts/serverguide/aptitude.html): menu-driven, text-based front-end
 * [atom](https://atom.io/): A hackable text editor, open source. We also install the support pack for rust in atom.
-* [cargo](https://github.com/rust-lang/cargo):  Cargo is distributed by default with Rust, so if you've got rustc installed locally you probably also have cargo installed locally.
 * [telegram](https://telegram.org/): Messenger
 * [openssh](http://www.openssh.com/): openssh-server and openssh-client
 * [tlp](http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html):  advanced power management for Linux without the need to understand every technical detail
+* tmux
+* htop
