@@ -30,6 +30,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 " 插件在倉庫的子目錄中.
 " 正確指定路徑用以設置runtimepath. 以下範例插件在sparkup/vim目錄下
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " 安裝L9，如果已經安裝過這個插件，可利用以下格式避免命名衝突
 Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -51,11 +52,11 @@ filetype plugin indent on    " 必須 加載vim自帶和插件相應的語法和
 " 將你自己對非插件片段放在這行之後
 
 :set ai
-":set background=dark
 :set cursorline
 :set enc=utf8
 :set wrap
 :set scrolloff=3
 :set cursorline
 :set ruler
+:set tabstop=2
 :set number
