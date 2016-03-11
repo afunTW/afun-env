@@ -1,5 +1,10 @@
 # setting vim vundle
-rm -rf ~/.vim/bundle/
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cp vundle.vim ~/.vimrc
+rm -rf ~/.vim/
+ln -s .vim ~/.vim
+ln -s .vimrc ~/.vimrc
 vim +PluginInstall +qall
+
+# setting powerline
+cp -r .font ~/	
+fc-cache -vf ~/.fonts/
+cp -r .config/fontconfig/conf.d/ ~/.config/fontconfig/conf.d/
