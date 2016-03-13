@@ -1,10 +1,13 @@
 # setting vim vundle
 rm -rf ~/.vim/
-ln -s .vim ~/.vim
-ln -s .vimrc ~/.vimrc
+rm ~/.vimrc
+# ln -s .vimrc ~/
+# ln -s .vim ~/
+cp -r .vim ~/
+cp .vimrc ~/
 vim +PluginInstall +qall
 
 # setting powerline
-cp -r .font ~/	
-fc-cache -vf ~/.fonts/
-cp -r .config/fontconfig/conf.d/ ~/.config/fontconfig/conf.d/
+# cp -r .fonts ~/	
+# fc-cache -vf ~/.fonts/
+# cp -r conf.d/ ~/.config/fontconfig/
