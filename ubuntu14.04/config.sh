@@ -51,11 +51,12 @@ easy_install pip
 
 echo -n ""
 echo "##########"
-echo "Installing IDE, Messenger(Telegram)"
-sudo add-apt-repository ppa:webupd8team/atom
-sudo add-apt-repository ppa:atareao/telegram
+echo "Installing IDE, Telegram, slack"
+sudo add-apt-repository -y ppa:webupd8team/atom
+sudo add-apt-repository -y ppa:atareao/telegram
+sudo apt-add-repository -y ppa:rael-gc/scudcloud
 sudo apt-get update
-for i in atom telegram
+for i in atom telegram scudcloud
 do
 	sudo apt-get -y install i
 done
