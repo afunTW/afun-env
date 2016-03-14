@@ -2,8 +2,8 @@ set nocompatible              " 去除VI一致性,必須
 filetype off                  " 必須
 
 " 設置包括vundle和初始化相關的runtime path
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
 " 另一種選擇, 指定一個vundle安裝插件的路徑
 "call vundle#begin('~/some/path/here')
@@ -16,10 +16,15 @@ Plugin 'VundleVim/Vundle.vim'
 " Github上的插件
 " 格式為 Plugin '用戶名/插件倉庫名'
 Plugin 'tpope/vim-fugitive'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-rails.git'
 
 " 來自 http://vim-scripts.org/vim/scripts.html 的插件
 " Plugin '插件名稱' 實際上是 Plugin 'vim-scripts/插件倉庫名' 只是此處的用戶名可以省略
 Plugin 'L9'
+Plugin 'FuzzyFinder'
 
 " 由Git支持但不再github上的插件倉庫 Plugin 'git clone 後面的地址'
 Plugin 'git://git.wincent.com/command-t.git'
