@@ -17,7 +17,6 @@ Plugin 'VundleVim/Vundle.vim'
 " 格式為 Plugin '用戶名/插件倉庫名'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-rails.git'
 
