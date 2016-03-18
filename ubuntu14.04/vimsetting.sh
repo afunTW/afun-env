@@ -8,6 +8,6 @@ cp .vimrc ~/
 vim +PluginInstall +qall
 
 # setting powerline
-# cp -r .fonts ~/	
-# fc-cache -vf ~/.fonts/
-# cp -r conf.d/ ~/.config/fontconfig/
+cp -r .fonts ~/	
+fc-cache -vf ~/.fonts/
+cp -r conf.d/ ~/.config/fontconfig/
