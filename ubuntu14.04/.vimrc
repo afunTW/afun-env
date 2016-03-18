@@ -16,7 +16,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Github上的插件
 " 格式為 Plugin '用戶名/插件倉庫名'
 Plugin 'tpope/vim-fugitive'
-Plugin 'gmarik/vundle'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-rails.git'
 
@@ -35,9 +34,6 @@ Plugin 'git://git.wincent.com/command-t.git'
 " 正確指定路徑用以設置runtimepath. 以下範例插件在sparkup/vim目錄下
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-
-" 安裝L9，如果已經安裝過這個插件，可利用以下格式避免命名衝突
-Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " 你的所有插件需要在下面這行之前
 call vundle#end()            " 必須
