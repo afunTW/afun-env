@@ -5,5 +5,5 @@ vim +PluginInstall +qall
 
 # setting powerline
 sudo apt-get install git
-git clone https://github.com/powerline/fonts ~/
+git clone https://github.com/powerline/fonts ~/.font
 ./.fonts/install.sh
