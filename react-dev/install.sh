@@ -15,14 +15,14 @@ nvm use node
 npm install -g live-server
 
 # install webpack
-npm install -D webpack webpack-dev-server
+# npm install -D webpack webpack-dev-server
 
 # install babel
 # babel-cli: execute ES6/ES7/JSX by command, e.g. `babel-node source.babel.js`
 # babel-core: babel core lib
 # babel-loader: webpack loader
 # babel-preser-*: for different syntax
-npm install -D babel-cli babel-core babel-loader babel-preset-es2015 babel-preset-stage-0 babel-preset-react
+# npm install -D babel-cli babel-core babel-loader babel-preset-es2015 babel-preset-stage-0 babel-preset-react
 
 # [option] install third party lib by npm (not cdn)
 # npm install -S react react-dom redux react-redux immutable
