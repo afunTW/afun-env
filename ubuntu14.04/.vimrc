@@ -64,3 +64,5 @@ filetype plugin indent on    " 必須 加載vim自帶和插件相應的語法和
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/                                                                    
 set laststatus=2  " Always show statusline
 set t_Co=256    " Use 256 colours (Use this setting only if your terminal supports 256 colours)
+colorscheme torte
+syntax on
