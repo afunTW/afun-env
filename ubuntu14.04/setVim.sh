@@ -1,4 +1,6 @@
 # setting vim vundle
+sudo apt-get update
+sudo apt-get install vim
 cp -r .vim ~/
 cp .vimrc ~/
 vim +PluginInstall +qall
