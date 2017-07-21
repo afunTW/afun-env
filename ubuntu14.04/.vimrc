@@ -35,6 +35,17 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
+" Auto-complete
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Syntax checking/ highlighting
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+let python_highlight_all=1
+syntax on
+
 " 你的所有插件需要在下面這行之前
 call vundle#end()            " 必須
 filetype plugin indent on    " 必須 加載vim自帶和插件相應的語法和文件類型相關腳本
