@@ -36,7 +36,7 @@ curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo add-apt-repository ppa:indicator-multiload/stable-daily
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
-for i in git nodejs make gcc ssh vim automake unzip tree aptitude indicator-multiload hime primus linux-headers-generic openssh-server openssh-client tlp tlp-rdw tmux htop
+for i in git nodejs make gcc ssh vim automake unzip tree aptitude indicator-multiload hime openssh-server openssh-client tmux htop
 do
 	sudo apt-get -y install $i
 done
@@ -46,22 +46,7 @@ echo -n ""
 echo "##########"
 echo "Instaling easy_install and pip"
 sudo apt-get install -y python-setuptools
-python ez_setup.py
 easy_install pip
-
-echo -n ""
-echo "##########"
-echo "Installing IDE, Telegram, slack"
-#sudo add-apt-repository -y ppa:webupd8team/atom
-sudo add-apt-repository -y ppa:atareao/telegram
-#sudo apt-add-repository -y ppa:rael-gc/scudcloud
-sudo apt-get update
-#for i in atom telegram scudcloud
-for i in telegram
-do
-	sudo apt-get -y install i
-done
-sudo mv Telegram /opt
 
 echo -n ""
 echo "##########"
