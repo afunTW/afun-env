@@ -7,7 +7,7 @@ Build up my own workflow and develope env setting.
 ### Editor - Vim
 
 ```sh
-wget -c https://raw.githubusercontent.com/afunTW/afun-env/master/vim/vimrc ~/.vimrc
+wget -c https://raw.githubusercontent.com/afunTW/afun-env/master/vim/vimrc -O ~/.vimrc
 ```
 
 ### OS - Ubuntu
