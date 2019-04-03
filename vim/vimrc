@@ -48,7 +48,7 @@ endfunction
 
 function FileSize()
     let bytes = getfsize(expand("%:p"))
-    if bytes <= 0:
+    if bytes <= 0
         return "[Empty]"
     elseif bytes < 1024
         return "[" . bytes . "]"
