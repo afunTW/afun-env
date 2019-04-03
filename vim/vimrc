@@ -82,9 +82,9 @@ hi filesize cterm=none ctermbg=238 ctermfg=225
 hi position cterm=none ctermbg=238 ctermfg=228
 
 " ----------------------------------------------- Powerling
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+"python3 from powerline.vim import setup as powerline_setup
+"python3 powerline_setup()
+"python3 del powerline_setup
 
 " ############################################### user-setting (afun)
 " define scope: map, map!, [nvoic]map
