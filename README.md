@@ -1,16 +1,20 @@
-# myConfig
-back-up setting on ubuntu.
+# afun-env
 
-## Running
+Build up my own workflow and develope env setting.
+
+## Usage
+
+### Editor - Vim
 
 ```sh
-git clone https://github.com/endlessproof/linux_env_config.git
-cd linux_env_config
-
-// choose the system version, e.x. ubuntu 14.04
-cd ubuntu14.04
-./config.sh
+wget -C https://raw.githubusercontent.com/afunTW/afun-env/master/vim/vimrc ~/.vimrc
 ```
 
-## Note
-Don't use vimplugin, it's unavaliable sofar
+### OS - Ubuntu
+
+> It's not availabe to use vimplugin in ubuntu16
+
+```sh
+git clone https://github.com/afunTW/afun-env
+./config.sh
+```
