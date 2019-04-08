@@ -68,6 +68,8 @@ set cursorline          " show the row cursorline
 set cursorcolumn        " show the column cursorline
 set number              " show line number
 set ruler               " show row:col status at right bottom
+set listchars=eol:¬,tab:>·  " set the line breaks and carriage return
+set list                    " show the hidden character
 
 " ----------------------------------------------- highlight setting
 " available after colorscheme
