@@ -27,6 +27,12 @@ set shiftwidth=4        " auto indent width
 " start to enable CTRL+w (delete word) and CTRL+u
 set backspace=indent,eol,start
 
+" ----------------------------------------------- fold
+set foldenable
+set foldmethod=indent
+set foldlevel=1
+set foldnestmax=5
+
 " ----------------------------------------------- statusline
 " could be replace by Powerline
 " %t, %F, %y -> file name, path, type
