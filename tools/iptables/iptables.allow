@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# 這份設定要搭配iptables.rule.sh運作
+# 底下則填寫你允許進入本機的其他網域或主機
+# e.g. 
+# iptables -A INPUT -i $EXTIF -s xxx.xxx.xxx.xxx/24 -j ACCEPT
+# iptables -A INPUT -i $EXTIF -s xxx.xxx.xxx.xxx -j ACCEPT

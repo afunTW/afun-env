@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# 這份設定要搭配iptables.rule.sh運作
+
+# 5. 允許某些服務的進入，請依照你自己的環境開啟
+# port 111: portmapper (tcp, udp)
+# port 1011: ypserv (tcp, udp)
+# port 1013: ypbind (tcp, udp)
+# port 1012: yppasswd (udp)
+# port 1014: fypxfrd (tcp, udp)
+
+# e.g.
+# iptables -A INPUT -p tcp -i $EXTIF -s xxx.xxx.xxx.xxx/24 -m multiport --dport 111,1011,1013,1014 -j ACCEPT
+
+#iptables -A INPUT -p TCP -i $EXTIF --dport  21 --sport 1024:65534 -j ACCEPT # FTP
+#iptables -A INPUT -p TCP -i $EXTIF --dport  22 --sport 1024:65534 -j ACCEPT # SSH 不建議直接開放，請允許IP即可
+#iptables -A INPUT -p TCP -i $EXTIF --dport  25 --sport 1024:65534 -j ACCEPT # SMTP
+#iptables -A INPUT -p UDP -i $EXTIF --dport  53 --sport 1024:65534 -j ACCEPT # DNS
+#iptables -A INPUT -p TCP -i $EXTIF --dport  53 --sport 1024:65534 -j ACCEPT # DNS
+#iptables -A INPUT -p TCP -i $EXTIF --dport  80 --sport 1024:65534 -j ACCEPT # WWW
+#iptables -A INPUT -p TCP -i $EXTIF --dport 110 --sport 1024:65534 -j ACCEPT # POP3
+#iptables -A INPUT -p TCP -i $EXTIF --dport 389 --sport 1024:65534 -j ACCEPT # LDAP
+#iptables -A INPUT -p TCP -i $EXTIF --dport 443 --sport 1024:65534 -j ACCEPT # HTTPS SSL
+#iptables -A INPUT -p TCP -i $EXTIF --dport 8080 --sport 1024:65534 -j ACCEPT # Tomcat
+#iptables -A INPUT -p TCP -i $EXTIF --dport 10000 --sport 1024:65534 -j ACCEPT # Webmin
