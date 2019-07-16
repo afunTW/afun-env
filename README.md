@@ -29,11 +29,13 @@ wget -c https://raw.githubusercontent.com/afunTW/afun-env/master/tools/vim/vimrc
 ```
 
 ### CLI 工具
+
 | 名稱 | 用途 | 使用頻率 | Note |
 | ----- | ----- | ----- | ----- |
 | [jq](https://github.com/stedolan/jq) | parse JSON | 普通 | 學習中 |
 
 ### 系統工具
+
 | 名稱 | 用途 | 使用頻率 | Note |
 | ----- | ----- | ----- | ----- |
 | [iptables](https://www.netfilter.org/projects/iptables/index.html) | packet filtering ruleset | 普通 | 忘記在哪裡找到的 script 方便快速設定 rules |
