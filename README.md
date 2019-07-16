@@ -5,6 +5,7 @@
 - [afun-env](#afun-env)
   - [程式開發](#%E7%A8%8B%E5%BC%8F%E9%96%8B%E7%99%BC)
     - [編輯器](#%E7%B7%A8%E8%BC%AF%E5%99%A8)
+    - [CLI 工具](#CLI-%E5%B7%A5%E5%85%B7)
   - [簡報文件](#%E7%B0%A1%E5%A0%B1%E6%96%87%E4%BB%B6)
   - [社交通訊](#%E7%A4%BE%E4%BA%A4%E9%80%9A%E8%A8%8A)
   - [其他工具](#%E5%85%B6%E4%BB%96%E5%B7%A5%E5%85%B7)
@@ -25,6 +26,11 @@
 ```sh
 wget -c https://raw.githubusercontent.com/afunTW/afun-env/master/vim/vimrc -O ~/.vimrc
 ```
+
+### CLI 工具
+| 名稱 | 用途 | 使用頻率 | Note |
+| ----- | ----- | ----- | ----- |
+| [jq](https://github.com/stedolan/jq) | parse JSON | 普通 | 學習中 |
 
 ## 簡報文件
 
