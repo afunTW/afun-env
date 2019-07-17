@@ -28,7 +28,7 @@ set shiftwidth=4        " auto indent width
 set backspace=indent,eol,start
 
 " ----------------------------------------------- fold
-set foldenable
+"set foldenable
 set foldmethod=indent
 set foldlevel=1
 
@@ -73,8 +73,9 @@ set cursorline          " show the row cursorline
 set cursorcolumn        " show the column cursorline
 set number              " show line number
 set ruler               " show row:col status at right bottom
-set listchars=eol:¬,tab:>·  " set the line breaks and carriage return
-set list                    " show the hidden character
+" set the line breaks and carriage return
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:¬
+set list                " show the hidden character
 
 " ----------------------------------------------- highlight setting
 " available after colorscheme
