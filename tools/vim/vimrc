@@ -31,7 +31,7 @@ set backspace=indent,eol,start
 "set foldenable
 set foldmethod=indent
 set foldlevel=1
-ser foldnestmax=2
+set foldnestmax=2
 
 " ----------------------------------------------- statusline
 " could be replace by Powerline
