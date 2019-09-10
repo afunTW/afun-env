@@ -25,7 +25,7 @@
 - vim 熟悉門檻高, 彈性大也適合在 server 中直接撰寫, 目前主要會透過 vim 來更改
 
 ```sh
-wget -c https://raw.githubusercontent.com/afunTW/afun-env/master/tools/vim/vimrc -O ~/.vimrc
+wget -c https://raw.githubusercontent.com/afunTW/afun-env/master/tools/vim/vimrc.min -O ~/.vimrc
 ```
 
 ### CLI 工具
