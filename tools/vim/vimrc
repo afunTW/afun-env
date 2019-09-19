@@ -147,6 +147,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'                 " Git wrapper, run git in vim
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}  " A parser for a condensed HTML format
 Plugin 'fisadev/vim-isort'                  " Sort python imports using
+Plugin 'junegunn/fzf.vim'                   " FZF + vim
 
 " All of your Plugins must be added before the following line
 call vundle#end()
