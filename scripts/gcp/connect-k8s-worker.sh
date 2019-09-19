@@ -97,7 +97,7 @@ delete_expired_cache "$DIR_PATH" "$K8S_PODS_CACHE_FILE"
 if [ ! -f "$K8S_PODS_CACHE_PATH" ]; then
   echo "Build k8s pods cache"
   kubectl get pods -A -o json > "$K8S_PODS_CACHE_JSONPATH"
-  jq -r '.items[] | "\(.metadata.namespace) \(.metadata.name)"' "$K8S_PODS_CACHE_JSONPATH" > "$K8S_PODS_CACHE_PATH"
+  jq -r '.items[] | select(.metadata.name | test("airflow-worker*")) | "\(.metadata.namespace) \(.metadata.name)"' "$K8S_PODS_CACHE_JSONPATH" > "$K8S_PODS_CACHE_PATH"
 fi
 K8S_POD=$(<"$K8S_PODS_CACHE_PATH" fzf)
 K8S_POD_NAMESPACE=$(echo "$K8S_POD" | awk -F ' ' '{print $1}')
