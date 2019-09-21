@@ -4,14 +4,14 @@
 # Thanks to ike
 ##################################################
 
-if ! [ -x "$(command -v gcloud)" ]
-then
+if ! [ -x "$(command -v gcloud)" ]; then
   echo 'Need gcloud to run this'
   exit
-fi
-if ! [ -x "$(command -v fzf)" ]
-then
+elif ! [ -x "$(command -v fzf)" ]; then
   echo 'Need fzf to run this'
+  exit
+elif ! [ -x "$(command -v jq)" ]; then
+  echo 'Need jq to run this'
   exit
 fi
 
@@ -34,14 +34,12 @@ CACHE_NAME="$FILE_NAME.cache"
 # Get account name
 NAME_CACHE_FILE="$CACHE_NAME.name"
 NAME_CACHE_PATH="$DIR_PATH/$NAME_CACHE_FILE"
-if [ ! -f "$NAME_CACHE_PATH" ]
-then
+if [ ! -f "$NAME_CACHE_PATH" ]; then
   echo "Build name cache..."
   gcloud config list account --format "value(core.account)" | awk -F '@' '{print $1}' > "$NAME_CACHE_PATH"
 fi
 NAME=$(cat "$NAME_CACHE_PATH")
-if [[ -z "$NAME" ]]
-then
+if [[ -z "$NAME" ]]; then
   echo 'Missing gcp account name!'
   exit
 fi
@@ -50,15 +48,13 @@ fi
 PROJECT_CACHE_FILE="$CACHE_NAME.projects"
 PROJECT_CACHE_PATH="$DIR_PATH/$PROJECT_CACHE_FILE"
 delete_expired_cache "$DIR_PATH" "$PROJECT_CACHE_FILE"
-if [ ! -f "$PROJECT_CACHE_PATH" ]
-then
+if [ ! -f "$PROJECT_CACHE_PATH" ]; then
   echo "Build projects cache..."
   PROJECTS=$(gcloud projects list | grep -v 'PROJECT_ID')
   printf "%s" "$PROJECTS" > "$PROJECT_CACHE_PATH"
 fi
 PROJECT=$(<"$PROJECT_CACHE_PATH" fzf)
-if [[ -z "$PROJECT" ]]
-then
+if [[ -z "$PROJECT" ]]; then
   exit
 fi
 CLOUDSDK_CORE_PROJECT=$(echo "$PROJECT" | awk '{print $1}')
@@ -88,8 +84,8 @@ gcloud container clusters get-credentials "$CLUSTER_NAME" \
 --project "$CLOUDSDK_CORE_PROJECT"
 
 # Get worker namespace
-K8S_PODS_CACHE_JSON="$CACHE_NAME.k8s.pods.json"
-K8S_PODS_CACHE_FILE="$CACHE_NAME.k8s.pods"
+K8S_PODS_CACHE_JSON="$CACHE_NAME.$CLUSTER_NAME.k8sworker.json"
+K8S_PODS_CACHE_FILE="$CACHE_NAME.$CLUSTER_NAME.k8sworker.pods"
 K8S_PODS_CACHE_JSONPATH="$DIR_PATH/$K8S_PODS_CACHE_JSON"
 K8S_PODS_CACHE_PATH="$DIR_PATH/$K8S_PODS_CACHE_FILE"
 delete_expired_cache "$DIR_PATH" "$K8S_PODS_CACHE_JSON"
@@ -102,5 +98,4 @@ fi
 K8S_POD=$(<"$K8S_PODS_CACHE_PATH" fzf)
 K8S_POD_NAMESPACE=$(echo "$K8S_POD" | awk -F ' ' '{print $1}')
 K8S_POD_NAME=$(echo "$K8S_POD" | awk -F ' ' '{print $2}')
-rm "$K8S_PODS_CACHE_JSONPATH" "$K8S_PODS_CACHE_PATH"
 kubectl exec --namespace="$K8S_POD_NAMESPACE" -it "$K8S_POD_NAME" bash
