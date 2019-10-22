@@ -20,3 +20,5 @@
 	whitespace = red reverse
 [alias]
 	graphlog = log --oneline --graph --color --all --decorate
+	last = log -1 HEAD
+	unstage = reset HEAD --
