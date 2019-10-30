@@ -135,11 +135,12 @@ function SwitchLineBreakingMode()
 endfunction
 
 " ############################################### Vundle
+set nocompatible
 filetype off
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -147,7 +148,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'                 " Git wrapper, run git in vim
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}  " A parser for a condensed HTML format
 Plugin 'fisadev/vim-isort'                  " Sort python imports using
-Plugin 'junegunn/fzf.vim'                   " FZF + vim
+"Plugin 'junegunn/fzf.vim'                   " FZF + vim
+"Plugin 'zxqfl/tabnine-vim'                  " NLP helper Tabnine, based on You_Complete_Me
 
 " All of your Plugins must be added before the following line
 call vundle#end()
