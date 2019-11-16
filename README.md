@@ -33,6 +33,7 @@ wget -c https://raw.githubusercontent.com/afunTW/afun-env/master/tools/vim/vimrc
 | 名稱 | 用途 | 使用頻率 | Note |
 | ----- | ----- | ----- | ----- |
 | [jq](https://github.com/stedolan/jq) | parse JSON | 普通 | 學習中 |
+| [ranger](https://github.com/ranger/ranger) | file manager | 經常 | 學習中 |
 
 ### 系統工具
 
