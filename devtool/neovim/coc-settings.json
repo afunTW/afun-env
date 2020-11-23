@@ -1,0 +1,77 @@
+{
+    // preference
+    "suggest.snippetIndicator": "▶",
+    "suggest.maxCompleteItemCount": 20,
+    "suggest.timeout": 500,
+    "suggest.minTriggerInputLength": 2,
+    "coc.preferences.formatOnSaveFiletypes": ["python"],
+    // language preference
+    "python.sortImports.path": "/home/afun/.local/bin/isort",
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/home/afun/.local/bin/black",
+    // laguage server
+    "python.jediEnabled": false,
+    "python.venvFolders": [
+        "envs",
+        ".pyenv",
+        ".direnv",
+        ".virtualenvs"
+    ],
+    "languageserver": {
+        "python": {
+            // "command": "/home/afun/.local/share/virtualenvs/lsp-5vyLrhEz/bin/python3",
+            "command": "python3",
+            "args": [
+                "-mpyls",
+                "-vv",
+                "--log-file", 
+                "/tmp/lsp_python.log"
+            ],
+            "trace.server": "verbose",
+            "filetypes": [
+                "python"
+            ],
+            "settings": {
+                "pyls": {
+                    "enable": true,
+                    "trace": {
+                        "server": "verbose"
+                    },
+                    "commandPath": "",
+                    "configurationSources": [
+                        "pycodestyle"
+                    ],
+                    "plugins": {
+                        "jedi_completion": {"enabled": true},
+                        "jedi_hover": {"enabled": true},
+                        "jedi_reference": {"enabled": true},
+                        "jedi_signature_help": {"enabled": true},
+                        "jedi_symbols": {"enabled": true, "all_scopes": true},
+                        "mccabe": {"enabled": true, "threshold": 15},
+                        "preload": {"enabled": true},
+                        "pycodestyle": {"enabled": true},
+                        "pydocstyle": {
+                            "enabled": false,
+                            "match": "(?!test_).*\\.py",
+                            "matchDir": "[^\\.].*"
+                        },
+                        "pyflakes": {"enabled": true},
+                        "rope_completion": {"enabled": true},
+                        "yapf": {"enabled": true},
+                        "pyls_mypy": {
+                            "enabled": true,
+                            "live_mode": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    // coc list
+    "list.insertMappings": {
+        "<C-v>": "action:vsplit",
+        "<C-s>": "action:split"
+    },
+    // coc-explorer
+    "explorer.icon.enableNerdfont": true,
+}
