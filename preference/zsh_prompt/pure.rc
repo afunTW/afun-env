@@ -1,0 +1,12 @@
+# required to setup after oh-my-zsh
+
+fpath+=$HOME/.zsh/pure
+
+# setting oh-my-zsh theme to pure https://github.com/sindresorhus/pure
+autoload -U promptinit; promptinit
+PURE_GIT_PULL=1
+zstyle :prompt:pure:path color cyan
+zstyle :prompt:pure:prompt:success color green
+zstyle :prompt:pure:prompt:error color red
+zstyle :prompt:pure:git:branch color yellow
+prompt pure

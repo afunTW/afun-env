@@ -1,0 +1,4 @@
+alias connect_k8s_worker="/home/afun/gitlab/wemo/personal/workflow-script/gcp/connect-k8s-worker.sh"
+alias clear_k8s_worker_cache="rm -r /home/afun/gitlab/wemo/personal/workflow-script/gcp/cache"
+alias pegasus-test="gcloud composer environments run pegasus-test --location=us-central1 --project=dataanalyst-188909"
+alias pegasus="gcloud composer environments run pegasus --location=us-central1 --project=dataanalyst-188909"
