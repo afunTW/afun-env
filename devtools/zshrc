@@ -85,3 +85,17 @@ zplug load
 if [ -f "$HOME/.dir_colors" ]; then
     eval $(dircolors ~/.dir_colors)
 fi
+
+# alias
+# consider to install from `setup_clitools.sh`
+alias cat="/usr/bin/batcat"
+alias xclip-set="xclip -selection c"
+alias xclip-get="xclip -selection clipboard -o"
+
+# function
+function pretty_csv {
+    column -t -s, -n "$@" | less -F -S -X -K -N -R
+}
+function xclip-section {
+    sed -n "$2","$3"p "$1" | xclip -selection c
+}
