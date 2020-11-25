@@ -1,0 +1,87 @@
+# activate zplug to manage plugin
+source ~/.zplug/init.zsh
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/afun/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# ##############################
+# zplug plugins
+# ##############################
+# ref
+#   - https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview
+
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
+
+# Preference / Theme
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplug "plugins/colored-man-pages", from:oh-my-zsh, as:plugin
+zplug "zsh-users/zsh-syntax-highlighting", as:plugin, defer:2
+
+# Productivity
+zplug "plugins/urltools", from:oh-my-zsh, as:plugin
+zplug "zsh-users/zsh-completions", as:plugin, defer:2
+zplug "zsh-users/zsh-autosuggestions", as:plugin, defer:2
+zplug "paulirish/git-open", as:plugin
+zplug "b4b4r07/httpstat", use:"(*).sh", rename-to:"$1", as:command
+
+# Build Tools
+zplug "plugins/docker", from:oh-my-zsh, as:plugin
+zplug "plugins/git", from:oh-my-zsh, as:plugin
+zplug "plugins/gitignore", from:oh-my-zsh, as:plugin
+
+# Python
+zplug "plugins/pyenv", from:oh-my-zsh, as:plugin
+zplug "plugins/virtualenv", from:oh-my-zsh, as:plugin
+zplug "plugins/virtualenvwrapper", from:oh-my-zsh, as:plugin
+
+# Navigation / Jumping
+zplug "plugins/autojump", from:oh-my-zsh, as:plugin
+zplug "junegunn/fzf", use:"shell/*.zsh", from:github, as:command, defer:2
+zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
+
+# ##############################
+# Customized zsh prompt - pure
+# ##############################
+
+# setting oh-my-zsh theme to pure https://github.com/sindresorhus/pure
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+PURE_GIT_PULL=1
+zstyle :prompt:pure:path color cyan
+zstyle :prompt:pure:prompt:success color green
+zstyle :prompt:pure:prompt:error color red
+zstyle :prompt:pure:git:branch color yellow
+prompt pure
+
+# ##############################
+# zplug check EOF
+# ##############################
+# Install packages that have not been installed yet
+if ! zplug check --verbose; then
+    printf Install? [y/N]: 
+    if read -q; then
+        echo; zplug install
+    else
+        echo
+    fi
+fi
+zplug load
+
+# ##############################
+# Customized
+# ##############################
+# activate dir_colors
+if [ -f "$HOME/.dir_colors" ]; then
+    eval $(dircolors ~/.dir_colors)
+fi
