@@ -1,3 +1,0 @@
-alias say=spd-say
-alias xclip-set="xclip -selection c"
-alias xclip-get="xclip -selection clipboard -o"

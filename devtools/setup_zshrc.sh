@@ -21,6 +21,7 @@ if [ ! -d "$HOME/.zplug" ]; then
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
     mv "$HOME/.zshrc" "$HOME/.zshrc.pre-zplug"
     cp "$CURRENT_DIR/zshrc" "$HOME/.zshrc"
+    cp "$CURRENT_DIR/alias_zsh" "$HOME/.alias_zsh"
 fi
 
 # ##############################
