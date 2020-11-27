@@ -22,6 +22,8 @@ if [ ! -d "$HOME/.zplug" ]; then
     mv "$HOME/.zshrc" "$HOME/.zshrc.pre-zplug"
     cp "$CURRENT_DIR/zshrc" "$HOME/.zshrc"
     cp "$CURRENT_DIR/alias_zsh" "$HOME/.alias_zsh"
+    zplug install
+    zplug status
 fi
 
 # ##############################
