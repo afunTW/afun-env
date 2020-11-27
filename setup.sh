@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 sudo apt update
-sudo apt install -y git curl tree
+sudo apt install -y git curl tree byobu
 
 ./devtools/setup_alternative.sh
 ./devtools/setup_gitconfig.sh

@@ -17,6 +17,13 @@ alias 9="cd -9"
 alias _="sudo "
 
 # ##############################
+# Window Manager
+# ##############################
+if type byobu-tmux > /dev/null; then
+    alias tmux="byobu-tmux"
+fi
+
+# ##############################
 # File Manager
 # ##############################
 alias md="mkdir -p"
@@ -36,4 +43,13 @@ else
     alias ll="ls -lh"
     alias ls="ls --color=tty"
     alias lsa="ls -lah"
+fi
+
+# ##############################
+# Uncategorized
+# ##############################
+if type batcat > /dev/null; then
+    alias cat="batcat"
+elif type bat > /dev/null; then
+    alias cat="bat"
 fi

@@ -89,7 +89,6 @@ fi
 # alias
 # consider to install from `setup_clitools.sh`
 alias say="spd-say"
-alias cat="/usr/bin/batcat"
 alias xclip-set="xclip -selection c"
 alias xclip-get="xclip -selection clipboard -o"
 if [ -f "$HOME/.alias_zsh" ]; then
