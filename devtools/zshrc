@@ -30,6 +30,9 @@ zplug "zsh-users/zsh-syntax-highlighting", as:plugin, defer:2
 
 # Productivity
 zplug "plugins/urltools", from:oh-my-zsh, as:plugin
+zplug "plugins/safe-paste", from:oh-my-zsh, as:plugin
+zplug "plugins/history-substring-search", from:oh-my-zsh, as:plugin
+zplug "plugins/command-not-found", from:oh-my-zsh, as:plugin
 zplug "zsh-users/zsh-completions", as:plugin, defer:2
 zplug "zsh-users/zsh-autosuggestions", as:plugin, defer:2
 zplug "paulirish/git-open", as:plugin
@@ -39,6 +42,7 @@ zplug "b4b4r07/httpstat", use:"(*).sh", rename-to:"$1", as:command
 zplug "plugins/docker", from:oh-my-zsh, as:plugin
 zplug "plugins/git", from:oh-my-zsh, as:plugin
 zplug "plugins/gitignore", from:oh-my-zsh, as:plugin
+zplug "plugins/node", from:oh-my-zsh, as:plugin
 
 # Python
 zplug "plugins/pyenv", from:oh-my-zsh, as:plugin
@@ -87,7 +91,6 @@ if [ -f "$HOME/.dir_colors" ]; then
 fi
 
 # alias
-# consider to install from `setup_clitools.sh`
 alias say="spd-say"
 alias xclip-set="xclip -selection c"
 alias xclip-get="xclip -selection clipboard -o"
