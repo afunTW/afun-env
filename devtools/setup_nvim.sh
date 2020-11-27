@@ -1,4 +1,7 @@
-# install
+#!/usr/bin/bash
+
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 # ref https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
 sudo apt install neovim python3-neovim software-properties-common
 
@@ -10,3 +13,10 @@ pip3 install --user neovim
 # get vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# clone the config file
+if [ -d "$HOME/.config/nvim" ]; then
+    cp -r "$CURRENT_DIR/nvim/." "$HOME/.config/nvim/."
+    # install package by vim-plug
+    nvim --headless +PlugInstall +qall
+fi
