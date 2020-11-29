@@ -9,6 +9,13 @@ sudo apt install -y \
     powerline fonts-powerline
 
 # ##############################
+# VPN
+# ##############################
+sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp
+sudo apt-get update
+sudo apt-get install network-manager-l2tp-gnome
+
+# ##############################
 # NodeJs
 # ##############################
 sudo apt install -y nodejs npm
