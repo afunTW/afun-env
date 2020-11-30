@@ -21,6 +21,11 @@ sudo apt-get install network-manager-l2tp-gnome
 sudo apt install -y nodejs npm
 
 # ##############################
+# Python
+# ##############################
+sudo apt install -y pipenv
+
+# ##############################
 # Devtools
 # ##############################
 ./devtools/setup_alternative.sh
