@@ -5,8 +5,8 @@
 # ##############################
 sudo apt update
 sudo apt install -y \
-    git curl tree byobu \
-    powerline fonts-powerline
+    git curl tree byobu powerline fonts-powerline \
+    libbz2-dev
 
 # ##############################
 # VPN
