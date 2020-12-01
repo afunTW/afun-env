@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # activate zplug to manage plugin
 source ~/.zplug/init.zsh
 
@@ -23,8 +30,9 @@ compinit
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 # Preference / Theme
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+#zplug "mafredri/zsh-async", from:github
+#zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplug "romkatv/powerlevel10k", as:theme, depth:
 zplug "plugins/colored-man-pages", from:oh-my-zsh, as:plugin
 zplug "zsh-users/zsh-syntax-highlighting", as:plugin, defer:2
 
@@ -59,15 +67,15 @@ zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
 # ##############################
 
 # setting oh-my-zsh theme to pure https://github.com/sindresorhus/pure
-fpath+=$HOME/.zsh/pure
-autoload -U promptinit; promptinit
-PURE_GIT_PULL=1
-zstyle :prompt:pure:path color cyan
-zstyle :prompt:pure:prompt:success color green
-zstyle :prompt:pure:prompt:error color red
-zstyle :prompt:pure:git:branch color yellow
-zstyle :prompt:pure:git:stash show yes
-prompt pure
+#fpath+=$HOME/.zsh/pure
+#autoload -U promptinit; promptinit
+#PURE_GIT_PULL=1
+#zstyle :prompt:pure:path color cyan
+#zstyle :prompt:pure:prompt:success color green
+#zstyle :prompt:pure:prompt:error color red
+#zstyle :prompt:pure:git:branch color yellow
+#zstyle :prompt:pure:git:stash show yes
+#prompt pure
 
 # ##############################
 # zplug check EOF
@@ -114,3 +122,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # load local bin
 export PATH="$HOME/.local/bin":$PATH
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
