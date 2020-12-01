@@ -66,6 +66,7 @@ zstyle :prompt:pure:path color cyan
 zstyle :prompt:pure:prompt:success color green
 zstyle :prompt:pure:prompt:error color red
 zstyle :prompt:pure:git:branch color yellow
+zstyle :prompt:pure:git:stash show yes
 prompt pure
 
 # ##############################
@@ -105,3 +106,11 @@ function pretty_csv {
 function xclip-section {
     sed -n "$2","$3"p "$1" | xclip -selection c
 }
+
+# load pyenv
+export PATH="/home/afun/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# load local bin
+export PATH="$HOME/.local/bin":$PATH
