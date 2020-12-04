@@ -33,6 +33,7 @@ curl https://pyenv.run | bash
 # ##############################
 # Devtools
 # ##############################
+sudo apt install -y fzf
 ./devtools/setup_alternative.sh
 ./devtools/setup_gitconfig.sh
 ./devtools/setup_zshrc.sh
