@@ -8,6 +8,6 @@ sudo apt-get install -y apt-transport-https ca-certificates gnupg
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 
 # Update and install the Cloud SDK
-sudo apt-get update && sudo apt-get install -y google-cloud-sdk
+sudo apt-get update && sudo apt-get install -y google-cloud-sdk kubectl
 
 gcloud init
