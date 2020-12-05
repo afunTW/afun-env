@@ -6,7 +6,7 @@
 sudo apt update
 sudo apt install -y \
     git curl tree byobu powerline fonts-powerline \
-    libbz2-dev
+    libbz2-dev alien
 
 # ##############################
 # VPN
@@ -34,7 +34,7 @@ curl https://pyenv.run | bash
 # Devtools
 # ##############################
 sudo apt install -y fzf
-./devtools/setup_alternative.sh
-./devtools/setup_gitconfig.sh
-./devtools/setup_zshrc.sh
-./devtools/setup_nvim.sh
+bash devtools/setup_alternative.sh
+bash devtools/setup_gitconfig.sh
+bash devtools/setup_zshrc.sh
+bash devtools/setup_nvim.sh
