@@ -34,5 +34,5 @@ fi
 DEVTOOL_DIR="$HOME/workspace/devtools/"
 mkdir -p $DEVTOOL_DIR
 
-# black
-pip3 instsall black --user
+# black, isort
+pip3 instsall --user black, isort
