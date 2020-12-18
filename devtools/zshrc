@@ -108,12 +108,21 @@ if [ -f "$HOME/.alias_zsh" ]; then
 fi
 
 # function
-function pretty_csv {
+function pretty-csv {
     column -t -s, -n "$@" | less -F -S -X -K -N -R
 }
 function xclip-section {
     sed -n "$2","$3"p "$1" | xclip -selection c
 }
+if type jq > /dev/null; then
+    function validate-json {
+        if cat $1 | jq -e . >/dev/null 2>&1; then
+            echo "Parsed JSON successfully and got something other than false/null"
+        else
+            echo "Failed to parse JSON, or got false/null"
+        fi
+    }
+fi
 
 # load pyenv
 export PATH="/home/afun/.pyenv/bin:$PATH"
