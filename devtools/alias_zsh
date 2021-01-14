@@ -53,3 +53,8 @@ if type batcat > /dev/null; then
 elif type bat > /dev/null; then
     alias cat="bat"
 fi
+
+# ##############################
+# Search
+# ##############################
+alias grep="grep --color=auto -n"
