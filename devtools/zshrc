@@ -99,14 +99,6 @@ if [ -f "$HOME/.dir_colors" ]; then
     eval $(dircolors ~/.dir_colors)
 fi
 
-# alias
-alias say="spd-say"
-alias xclip-set="xclip -selection c"
-alias xclip-get="xclip -selection clipboard -o"
-if [ -f "$HOME/.alias_zsh" ]; then
-    source "$HOME/.alias_zsh"
-fi
-
 # function
 function pretty-csv {
     column -t -s, -n "$@" | less -F -S -X -K -N -R
@@ -123,6 +115,28 @@ if type jq > /dev/null; then
         fi
     }
 fi
+function decode_base64_url() {
+  local len=$((${#1} % 4))
+  local result="$1"
+  if [ $len -eq 2 ]; then result="$1"'=='
+  elif [ $len -eq 3 ]; then result="$1"'=' 
+  fi
+  echo "$result" | tr '_-' '/+' | openssl enc -d -base64
+}
+
+function decode_jwt() {
+   decode_base64_url $(echo -n $2 | cut -d "." -f $1) | jq .
+}
+
+# alias
+alias say="spd-say"
+alias xclip-set="xclip -selection c"
+alias xclip-get="xclip -selection clipboard -o"
+if [ -f "$HOME/.alias_zsh" ]; then
+    source "$HOME/.alias_zsh"
+fi
+alias jwth="decode_jwt 1" # decode JWT header
+alias jwtp="decode_jwt 2" # decode JWT payload
 
 # load pyenv
 export PATH="/home/afun/.pyenv/bin:$PATH"
