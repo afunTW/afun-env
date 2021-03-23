@@ -15,6 +15,7 @@ Plug 'sheerun/vim-polyglot'
 """ Functionalities - Main
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'easymotion/vim-easymotion'
 
 "" Functionalities - Language Pack
 Plug 'vim-python/python-syntax'
@@ -89,6 +90,20 @@ let g:closetag_regions = {
     \ }
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
+
+"" plugin - easymotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" `s{char}{char}{label}`
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 """""""""" Build-in
 
