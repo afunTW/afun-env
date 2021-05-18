@@ -5,7 +5,7 @@ TARGET_DIR=~/workspace/devtools
 # ####################
 # user
 # ####################
-git config --global user.email "endlessproof@gmail.com"
+git config --global user.email "me@afun.tw"
 git config --global user.name "afunTW"
 
 # ####################
@@ -53,4 +53,12 @@ if [ ! -d "$TARGET_DIR/diff-so-fancy" ]; then
     git config --global color.diff.old        "red bold"
     git config --global color.diff.new        "green bold"
     git config --global color.diff.whitespace "red reverse"
+fi
+if [ ! -d "$TARGET_DIR/git-good-commit" ]; then
+    git clone https://github.com/tommarshall/git-good-commit "$TARGET_DIR/git-good-commit"
+    mkdir -p ~/.git-template/hooks
+    git config --global init.templatedir '~/.git-template'
+    curl https://cdn.rawgit.com/tommarshall/git-good-commit/v0.6.1/hook.sh \
+        > ~/.git-template/hooks/commit-msg \
+        && chmod +x ~/.git-template/hooks/commit-msg
 fi
