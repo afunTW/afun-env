@@ -1,5 +1,7 @@
+""""""""""""""""""""""""""""""
+" vim-plug
+""""""""""""""""""""""""""""""
 call plug#begin()
-""""""""""" Vim-Plug
 
 """ Aesthetics - Main
 Plug 'vim-airline/vim-airline'
@@ -25,33 +27,17 @@ Plug 'alvan/vim-closetag'
 
 call plug#end()
 
-"" Powerline Intergration
+""""""""""""""""""""""""""""""
+" vim-plug plugin setting
+""""""""""""""""""""""""""""""
+
+""" powerline - intergration
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" unicode symbols
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
-" let g:airline_symbols.crypt = '🔒'
-" let g:airline_symbols.linenr = '☰'
-" let g:airline_symbols.linenr = '␊'
-" let g:airline_symbols.linenr = '␤'
-" let g:airline_symbols.linenr = '¶'
-" let g:airline_symbols.maxlinenr = ''
-" let g:airline_symbols.maxlinenr = '㏑'
-" let g:airline_symbols.branch = '⎇'
-" let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.paste = 'Þ'
-" let g:airline_symbols.paste = '∥'
-" let g:airline_symbols.spell = 'Ꞩ'
-" let g:airline_symbols.notexists = 'Ɇ'
-" let g:airline_symbols.whitespace = 'Ξ'
-
-" airline powerline symbol and theme
+""" airline - powerline symbol and theme
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -62,23 +48,13 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 let g:airline_theme = 'onedark'
-"let g:airline_theme = 'powerlineish'
-
-" coc explorer preset
-let g:coc_explorer_global_presets = {
-\    'basic': {
-\       'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   }
-\}
-
-"" extensions
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:python_highlight_all = 1
 
-"" plugin - closetag
+"" closetag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.ejs'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 let g:closetag_filetypes = 'html,xhtml,phtml'
@@ -91,21 +67,24 @@ let g:closetag_regions = {
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
-"" plugin - easymotion
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-" `s{char}{label}`
+""" coc - explorer preset
+let g:coc_explorer_global_presets = {
+\    'basic': {
+\       'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\}
+
+"" easymotion
+let g:EasyMotion_do_mapping = 0     " Disable default mappings
 nmap s <Plug>(easymotion-overwin-f)
-" `s{char}{char}{label}`
 nmap s <Plug>(easymotion-overwin-f2)
-
-" Turn on case-insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
+let g:EasyMotion_smartcase = 1      " Turn on case-insensitive feature
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-"""""""""" Build-in
+""""""""""""""""""""""""""""""
+" build-in
+""""""""""""""""""""""""""""""
 
 """ Aesthetics
 syntax on
@@ -127,7 +106,6 @@ set nu
 set ai
 set cursorline
 set encoding=utf-8
-"set backspace=indent,eol
 
 "" Indent
 set cindent             " C-liked auto indent
@@ -146,16 +124,24 @@ set foldnestmax=2
 "" line
 set list
 
-"""""""""" Shortcut
+""""""""""""""""""""""""""""""
+" Mapping Shortcut
+""""""""""""""""""""""""""""""
 function! SetupCommandAbbrs(from, to)
     exec 'cnoreabbrev <expr> '.a:from
         \ .' ((getcmdtype() ==# ":" && getcmdline() ==# "'.a:from.'")'
         \ .'? ("'.a:to.'") : ("'.a:from.'"))'
 endfunction
 
-" Use C to open coc config
+
+""" coc - open the coc config
 call SetupCommandAbbrs('C', 'CocConfig')
 
-" normal map
-"nmap <space>e :CocCommand explorer --toggle --sources=buffer+,file+<CR>
+""" coc - open the file exporer
 nmap <space>e :CocCommand explorer --toggle --sources=buffer+,file+ --preset basic<CR>
+
+""" move lines with alt + j or k
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
