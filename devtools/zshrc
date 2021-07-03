@@ -127,6 +127,18 @@ function decode_base64_url() {
 function decode_jwt() {
    decode_base64_url $(echo -n $2 | cut -d "." -f $1) | jq .
 }
+function j() {
+    if [[ "$#" -ne 0 ]]; then
+        cd $(autojump $@)
+        return
+    fi
+    cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)" 
+}
+
+function ssh-host() {
+  ssh "$(grep -x "^Host .*$" ~/.ssh/config | awk '{print $2}' | fzf)"
+}
+
 
 # alias
 alias say="spd-say"
