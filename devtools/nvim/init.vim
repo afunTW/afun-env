@@ -1,43 +1,28 @@
-""""""""""""""""""""""""""""""
-" vim-plug
-""""""""""""""""""""""""""""""
+" ========== vim-plug: manage the plugin
 call plug#begin()
-
-""" Aesthetics - Main
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-"" Aesthetics - themes
-Plug 'joshdick/onedark.vim'
-Plug 'sheerun/vim-polyglot'
-"Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-"Plug 'arcticicestudio/nord-vim'
-"Plug 'ryanoasis/vim-devicons'
-
-""" Functionalities - Main
-Plug 'tpope/vim-fugitive'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'easymotion/vim-easymotion'
-
-"" Functionalities - Language Pack
-Plug 'vim-python/python-syntax'
-Plug 'elzr/vim-json'
-Plug 'mechatroner/rainbow_csv'
-Plug 'alvan/vim-closetag'
-
+Plug 'vim-airline/vim-airline'                          " lean & mean status/tabline for vim that's light as air
+Plug 'vim-airline/vim-airline-themes'                   " theme
+Plug 'joshdick/onedark.vim'                             " theme
+Plug 'sheerun/vim-polyglot'                             " a solid language pack for Vim
+Plug 'tpope/vim-fugitive'                               " the premier vim plugin for git (:Git)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}         " load extensions like vscode and host language server
+Plug 'easymotion/vim-easymotion'                        " vim motions on speed
+Plug 'elzr/vim-json'                                    " a better json for vim
 call plug#end()
 
-""""""""""""""""""""""""""""""
-" vim-plug plugin setting
-""""""""""""""""""""""""""""""
-
-""" powerline - intergration
-let g:airline_powerline_fonts = 1
+" ========== vim-plug customization
+" vim-airline/vim-airline & vim-airline/vim-airline-theme
+let g:airline#extensions#tabline#enabled = 1                        " display all buffers when there's only one table open
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " how file paths are displayed in each individual tab
+let g:airline_detect_modified= 1                                    " enable modified detection
+let g:airline_detect_spell=1                                        " enable spell detection
+let g:airline_powerline_fonts = 1                                   " enable powerline integration
+let g:airline#extensions#tabline#buffer_nr_show = 1                 " configure whether buffer numbers should be shown
+let g:airline#extensions#coc#enabled = 1                            " enable coc integration
+let g:airline#extensions#branch#enabled = 1                         " enable fugitive/lawrencium integration
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-
-""" airline - powerline symbol and theme
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -48,45 +33,29 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 let g:airline_theme = 'onedark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#coc#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:python_highlight_all = 1
 
-"" closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.ejs'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-let g:closetag_filetypes = 'html,xhtml,phtml'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
-let g:closetag_emptyTags_caseSensitive = 1
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ }
-let g:closetag_shortcut = '>'
-let g:closetag_close_shortcut = '<leader>>'
+" neoclide/coc.nvim
+source ~/.config/nvim/coc-config.vim
 
-""" coc - explorer preset
-let g:coc_explorer_global_presets = {
-\    'basic': {
-\       'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   }
-\}
+" easymotion/vim-easymotion
+let g:EasyMotion_do_mapping = 0                 " disable default mappings
+let g:EasyMotion_smartcase = 1                  " turn on case-insensitive feature
 
-"" easymotion
-let g:EasyMotion_do_mapping = 0     " Disable default mappings
-nmap s <Plug>(easymotion-overwin-f)
+" ========== shortcut
+nnoremap <C-t> :tabnew<Space>
+
+" easymotion to search
 nmap s <Plug>(easymotion-overwin-f2)
-let g:EasyMotion_smartcase = 1      " Turn on case-insensitive feature
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-""""""""""""""""""""""""""""""
-" build-in
-""""""""""""""""""""""""""""""
+" move lines with alt + j or k
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
-""" Aesthetics
+" ========== build-in
 syntax on
 colorscheme onedark
 if (has("nvim"))
@@ -100,48 +69,19 @@ set laststatus=2
 set statusline^=%{coc#status()}
 set t_Co=256
 filetype indent on
-
-""" Functionalities
 set nu
 set ai
 set cursorline
+set cursorcolumn
 set encoding=utf-8
-
-"" Indent
 set cindent             " C-liked auto indent
 set expandtab           " expand tab to insert spaces
 set tabstop=4           " tab width
 set softtabstop=4       " virtual tab width (tab then space)
 set shiftwidth=4        " auto indent width
-
-"" fold
 set wrap
 set nofoldenable
 set foldmethod=indent
 set foldlevel=1
 set foldnestmax=2
-
-"" line
 set list
-
-""""""""""""""""""""""""""""""
-" Mapping Shortcut
-""""""""""""""""""""""""""""""
-function! SetupCommandAbbrs(from, to)
-    exec 'cnoreabbrev <expr> '.a:from
-        \ .' ((getcmdtype() ==# ":" && getcmdline() ==# "'.a:from.'")'
-        \ .'? ("'.a:to.'") : ("'.a:from.'"))'
-endfunction
-
-
-""" coc - open the coc config
-call SetupCommandAbbrs('C', 'CocConfig')
-
-""" coc - open the file exporer
-nmap <space>e :CocCommand explorer --toggle --sources=buffer+,file+ --preset basic<CR>
-
-""" move lines with alt + j or k
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
