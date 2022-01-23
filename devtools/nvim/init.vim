@@ -6,6 +6,7 @@ Plug 'joshdick/onedark.vim'                             " theme
 Plug 'sheerun/vim-polyglot'                             " a solid language pack for Vim
 Plug 'tpope/vim-fugitive'                               " the premier vim plugin for git (:Git)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}         " load extensions like vscode and host language server
+Plug 'junegunn/fzf', {'do': { -> fzf#install() } }      " command line fuzzy finder
 Plug 'easymotion/vim-easymotion'                        " vim motions on speed
 Plug 'elzr/vim-json'                                    " a better json for vim
 call plug#end()

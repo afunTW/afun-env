@@ -1,9 +1,12 @@
 " ========== global config
 let g:coc_global_extenstions = [
 \ 'coc-pyright',
+\ 'coc-pyls',
 \ 'coc-json',
 \ 'coc-git',
-\ 'coc-explorer'
+\ 'coc-explorer',
+\ 'coc-highlight',
+\ 'coc-fzf-preview',
 \ ]
 let g:coc_explorer_global_presets = {'basic': {'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'}}
 
