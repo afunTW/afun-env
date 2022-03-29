@@ -29,7 +29,7 @@ fi
 # ##############################
 # Dependencies for zplug
 # ##############################
-DEVTOOL_DIR="$HOME/workspace/devtools/"
+DEVTOOL_DIR="$HOME/workspace/devtools"
 mkdir -p $DEVTOOL_DIR
 git clone git://github.com/wting/autojump.git "$DEVTOOL_DIR/autojump"
 python3 "$DEVTOOL_DIR/autojump/install.py"
