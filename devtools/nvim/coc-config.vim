@@ -76,6 +76,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> bn :bn<Cr>
 nmap <silent> bp :bp<Cr>
+nmap <C-f> *``
+nmap <C-S-F> #``
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
