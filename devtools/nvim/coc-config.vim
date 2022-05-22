@@ -50,6 +50,9 @@ endfunction
 " open the file explorer
 nmap <space>e :CocCommand explorer --toggle --sources=buffer+,file+ --preset basic<CR>
 
+" save file
+nmap <C-s> :w<Cr>
+
 " open the coc config fi
 call SetupCommandAbbrs('C', 'CocConfig')
 
