@@ -34,17 +34,6 @@
             "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
             "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
         },
-        "python": {
-            "command": "python",
-            "args": ["-mpyls", "-vv", "--log-file", "/tmp/lsp_python.log"],
-            "filetypes": ["python"],
-            "settings": {
-                "pyls": {
-                    "enable": true,
-                    "trace": {"server": "verbose"}
-                }
-            }
-        },
         "sql": {
             "command": "sql-language-server",
             "args": ["up", "--method", "stdio"],
