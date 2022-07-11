@@ -38,6 +38,12 @@
             "command": "sql-language-server",
             "args": ["up", "--method", "stdio"],
             "filetypes": ["sql", "mysql"]
+        },
+        "golang": {
+            "command": "gopls",
+            "args": ["serve", "-debug", "0.0.0.0:8484", "-rpc.trace"],
+            "rootPatterns": ["go.mod"],
+            "filetypes": ["go"]
         }
     }
 }

@@ -9,6 +9,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}         " load extensions like v
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } }      " command line fuzzy finder
 Plug 'easymotion/vim-easymotion'                        " vim motions on speed
 Plug 'elzr/vim-json'                                    " a better json for vim
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}        " Go development plugin for Vim
 call plug#end()
 
 " ========== vim-plug customization
