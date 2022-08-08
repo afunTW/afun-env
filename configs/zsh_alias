@@ -1,0 +1,48 @@
+# ##############################
+# Alternative
+# ##############################
+# ls -> exa
+if type exa > /dev/null; then
+    # display
+    alias ls="exa -F"
+    alias lt="exa -T"
+    # long view
+    alias l="exa -lah --git --time-style long-iso --sort name"
+    alias la="exa -lah --git --time-style long-iso"
+    alias ll="exa -lh --git --time-style long-iso --sort name"
+else
+    alias l="ls -lah"
+    alias la="ls -lAh"
+    alias ll="ls -lh"
+    alias ls="ls --color=tty"
+    alias lsa="ls -lah"
+fi
+
+# cat -> bat
+if type batcat > /dev/null; then
+    alias cat="batcat"
+elif type bat > /dev/null; then
+    alias cat="bat"
+fi
+
+# ##############################
+# Utils
+# ##############################
+alias ...=../..
+alias ....=../../..
+alias .....=../../../..
+alias ......=../../../../..
+alias 1="cd -"
+alias 2="cd -2"
+alias 3="cd -3"
+alias 4="cd -4"
+alias 5="cd -5"
+alias 6="cd -6"
+alias 7="cd -7"
+alias 8="cd -8"
+alias 9="cd -9"
+alias _="sudo "
+alias grep="grep --color=auto -n"
+alias say="spd-say"
+alias xclip-set="xclip -selection c"
+alias xclip-get="xclip -selection clipboard -o"

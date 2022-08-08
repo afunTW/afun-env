@@ -1,42 +1,37 @@
 #!/usr/bin/bash
 
 # ##############################
-# System
+# Base
 # ##############################
 sudo apt update
 sudo apt install -y \
-    git curl tree byobu powerline fonts-powerline \
-    libbz2-dev alien
+    byobu curl git htop jq make tree wget
 
 # ##############################
-# VPN
+# Shell
 # ##############################
-sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp
-sudo apt-get update
-sudo apt-get install network-manager-l2tp-gnome
+bash scripts/enhance_zsh.sh
 
 # ##############################
-# NodeJs
+# IDE
 # ##############################
-sudo apt install -y nodejs npm
+sudo apt install -y vim neovim
+
+# ##############################
+# Network
+# ##############################
+#/bin/bash scripts/install_openvpn3_client.sh
 
 # ##############################
 # Python
 # ##############################
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
-libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl \
-python3-pip ipython3 python3-tk
-
-pip3 install --user pipenv
-
-curl https://pyenv.run | bash
+sudo apt install -y build-essential python-openssl python3-pip
 
 # ##############################
-# Devtools
+# Development
 # ##############################
-sudo apt install -y fzf
-bash devtools/setup_alternative.sh
-bash devtools/setup_gitconfig.sh
-bash devtools/setup_zshrc.sh
-bash devtools/setup_nvim.sh
+#sudo apt install -y fzf
+#bash devtools/setup_alternative.sh
+#bash devtools/setup_gitconfig.sh
+#bash devtools/setup_zshrc.sh
+#bash devtools/setup_nvim.sh

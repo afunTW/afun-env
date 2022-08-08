@@ -1,0 +1,49 @@
+source ~/.zplug/init.zsh
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+
+# ##############################
+# zplug - plugins
+# ##############################
+# ref. https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview
+# ref. https://github.com/unixorn/awesome-zsh-plugins
+
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "zsh-users/zsh-completions", as:plugin, defer:2
+zplug "zsh-users/zsh-history-substring-search", as:plugin, defer:2
+zplug "zsh-users/zsh-autosuggestions", as:plugin, defer:2
+zplug "zsh-users/zsh-syntax-highlighting", as:plugin, defer:2
+zplug "plugins/colored-man-pages", from:oh-my-zsh, as:plugin
+zplug "plugins/urltools", from:oh-my-zsh, as:plugin
+zplug "plugins/extract", from:oh-my-zsh, as:plugin
+zplug "plugins/autojump", from:oh-my-zsh, as:plugin
+zplug "plugins/git", from:oh-my-zsh, as:plugin
+zplug "plugins/gitignore", from:oh-my-zsh, as:plugin
+zplug "plugins/pyenv", from:oh-my-zsh, as:plugin
+zplug "plugins/virtualenv", from:oh-my-zsh, as:plugin
+zplug "plugins/virtualenvwrapper", from:oh-my-zsh, as:plugin
+zplug "junegunn/fzf", use:"shell/*.zsh", from:github, as:command, defer:2
+zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
+zplug "b4b4r07/enhancd", use:init.sh
+zplug "b4b4r07/httpstat", as:command, use:'(*).sh', rename-to:'$1'
+zplug "paulirish/git-open", as:plugin
+
+# ##############################
+# zplug - install and load
+# ##############################
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load
+
+# ##############################
+# custom
+# ##############################
+if [ -f "$HOME/.zsh_alias" ]; then
+    source "$HOME/.zsh_alias"
+fi
