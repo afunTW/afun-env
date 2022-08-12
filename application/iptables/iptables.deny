@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# 這份設定要搭配iptables.rule.sh運作
-# 底下填寫的是『你要抵擋的IP！』
-
