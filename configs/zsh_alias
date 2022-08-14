@@ -7,9 +7,9 @@ if type exa > /dev/null; then
     alias ls="exa -F"
     alias lt="exa -T"
     # long view
-    alias l="exa -lah --git --time-style long-iso --sort name"
-    alias la="exa -lah --git --time-style long-iso"
-    alias ll="exa -lh --git --time-style long-iso --sort name"
+    alias l="exa -lah --time-style long-iso --sort name --icons"
+    alias la="exa -lah --time-style long-iso"
+    alias ll="exa -lh --time-style long-iso --sort name --icons"
 else
     alias l="ls -lah"
     alias la="ls -lAh"
@@ -25,24 +25,35 @@ elif type bat > /dev/null; then
     alias cat="bat"
 fi
 
+# tmux -> byobu-tmux
+if type byobu-tmux > /dev/null; then
+    alias tmux="byobu-tmux"
+fi
+
 # ##############################
 # Utils
 # ##############################
-alias ...=../..
-alias ....=../../..
-alias .....=../../../..
-alias ......=../../../../..
-alias 1="cd -"
-alias 2="cd -2"
-alias 3="cd -3"
-alias 4="cd -4"
-alias 5="cd -5"
-alias 6="cd -6"
-alias 7="cd -7"
-alias 8="cd -8"
-alias 9="cd -9"
-alias _="sudo "
 alias grep="grep --color=auto -n"
 alias say="spd-say"
 alias xclip-set="xclip -selection c"
 alias xclip-get="xclip -selection clipboard -o"
+
+# jq
+if type jq > /dev/null; then
+    function validate_json {
+        if cat $1 | jq -e . > /dev/null 2>&1; then
+            echo "Success"
+            exit 0
+        else
+            echo "Failed"
+            exit 1
+        fi
+    }
+fi
+
+# fzf
+if type fzf > /dev/null; then
+    alias fzf="fzf --color 'fg:#bbccdd,fg+:#ddeeff,preview-bg:#223344,border:#778899'"
+    alias fzf-preview="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+    alias fzf-csv="column -s, -t | fzf --no-sort --exact --reverse --header-lines=1"
+fi

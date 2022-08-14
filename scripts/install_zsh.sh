@@ -13,11 +13,11 @@ echo $_prompt
 # Install zsh
 # ##############################
 if [ "$(cat /etc/shells | grep zsh | wc -l)" = 0 ]; then
-	echo "Install zsh..."
+    echo "Install zsh..."
     sudo apt install -y zsh
 fi
 if [ $SHELL != $(which zsh) ]; then
-	echo "Setting default shell to zsh..."
+    echo "Setting default shell to zsh..."
     sudo chsh -s $(which zsh)
 fi
 
