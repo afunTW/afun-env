@@ -1,11 +1,12 @@
 #!/bin/bash
 
-TARGET_DIR=~/workspace/devtools
+TARGET_DIR="$HOME/.local/share"
+mkdir -p $TARGET_DIR
 
 # ####################
 # user
 # ####################
-git config --global user.email "me@afun.tw"
+git config --global user.email "afun@afun.tw"
 git config --global user.name "afunTW"
 
 # ####################
@@ -43,6 +44,7 @@ if [ ! -d "$TARGET_DIR/diff-so-fancy" ]; then
     git clone https://github.com/so-fancy/diff-so-fancy "$TARGET_DIR/diff-so-fancy"
     git config --global core.pager "$TARGET_DIR/diff-so-fancy/diff-so-fancy | less --tabs=4 -RFX"
     git config --global color.ui true
+    git config --global interactive.diffFilter "diff-so-fancy --patch"
     git config --global color.diff-highlight.oldNormal    "red bold"
     git config --global color.diff-highlight.oldHighlight "red bold 52"
     git config --global color.diff-highlight.newNormal    "green bold"
@@ -53,12 +55,4 @@ if [ ! -d "$TARGET_DIR/diff-so-fancy" ]; then
     git config --global color.diff.old        "red bold"
     git config --global color.diff.new        "green bold"
     git config --global color.diff.whitespace "red reverse"
-fi
-if [ ! -d "$TARGET_DIR/git-good-commit" ]; then
-    git clone https://github.com/tommarshall/git-good-commit "$TARGET_DIR/git-good-commit"
-    mkdir -p ~/.git-template/hooks
-    git config --global init.templatedir '~/.git-template'
-    curl https://cdn.rawgit.com/tommarshall/git-good-commit/v0.6.1/hook.sh \
-        > ~/.git-template/hooks/commit-msg \
-        && chmod +x ~/.git-template/hooks/commit-msg
 fi
