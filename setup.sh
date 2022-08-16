@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # ##############################
 # Base
@@ -10,28 +10,19 @@ sudo apt install -y \
 # ##############################
 # Shell
 # ##############################
-bash scripts/enhance_zsh.sh
+/bin/bash scripts/install_zsh.sh
+sudo apt install -y bat
 
 # ##############################
 # IDE
 # ##############################
-sudo apt install -y vim neovim
-
-# ##############################
-# Network
-# ##############################
-#/bin/bash scripts/install_openvpn3_client.sh
-
-# ##############################
-# Python
-# ##############################
-sudo apt install -y build-essential python-openssl python3-pip
+/bin/bash scripts/install_nvm.sh
+nvm install node
+/bin/bash scripts/install_nvim.sh
 
 # ##############################
 # Development
 # ##############################
-#sudo apt install -y fzf
-#bash devtools/setup_alternative.sh
-#bash devtools/setup_gitconfig.sh
-#bash devtools/setup_zshrc.sh
-#bash devtools/setup_nvim.sh
+sudo apt install -y build-essential python-openssl python3-pip
+/bin/bash script/install_python_development.sh
+/bin/bash script/install_gitconfig.sh
