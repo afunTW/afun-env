@@ -20,7 +20,7 @@ set laststatus=2
 
 " development
 set autoindent
-set cindent 
+set cindent
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -31,11 +31,17 @@ set foldmethod=indent
 set foldlevel=1
 set foldnestmax=2
 set list
+set relativenumber
 
 " =======================================================================================
 " keymap
 " =======================================================================================
 nnoremap <C-t> :tabnew<Space>
+nnoremap <C-s> :w<CR>
+nnoremap <C-l> :source $HOME/.config/nvim/init.vim<CR>
+nnoremap bn :bn<CR>
+nnoremap bp :bp<CR>
+nnoremap bd :bd<CR>
 
 " move the selected line <Alt+j> <Alt+k>
 nnoremap <A-j> :m .+1<CR>==
@@ -54,11 +60,8 @@ call plug#begin()
     " development
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'tpope/vim-fugitive'
-
-    Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
-    Plug 'easymotion/vim-easymotion'
-    Plug 'elzr/vim-json'
-    Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+    "Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
+    "Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " =======================================================================================
@@ -67,3 +70,7 @@ call plug#end()
 source $HOME/.config/nvim/plugins/airline.vim
 source $HOME/.config/nvim/plugins/tokyonight.vim
 source $HOME/.config/nvim/plugins/coc.vim
+
+if $NVM_BIN != ""
+    let g:coc_node_path = '$NVM_BIN/node'
+endif
