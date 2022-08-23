@@ -5,7 +5,7 @@
 # ##############################
 sudo apt update
 sudo apt install -y \
-    byobu curl git htop jq make tree wget
+    byobu curl git htop jq make tree wget fzf
 
 # ##############################
 # Shell
