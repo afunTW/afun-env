@@ -15,6 +15,7 @@ let g:coc_global_extentions = [
 \    'coc-marketplace',
 \    'coc-sh',
 \    'coc-pyright',
+\    'coc-go',
 \    ]
 
 " =======================================================================================
