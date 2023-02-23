@@ -7,9 +7,9 @@ if type exa > /dev/null; then
     alias ls="exa -F"
     alias lt="exa -T"
     # long view
-    alias l="exa -lah --time-style long-iso --sort name --icons"
-    alias la="exa -lah --time-style long-iso"
-    alias ll="exa -lh --time-style long-iso --sort name --icons"
+    alias l="exa -lah --time-style long-iso --group-directories-first --sort name --icons"
+    alias la="exa -lah --time-style long-iso --group-directories-first "
+    alias ll="exa -lh --time-style long-iso --sort name --icons --group-directories-first "
 else
     alias l="ls -lah"
     alias la="ls -lAh"
