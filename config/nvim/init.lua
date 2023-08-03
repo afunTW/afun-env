@@ -1,0 +1,18 @@
+require("plugins.setup")
+require("core.options")
+require("core.keymaps")
+
+-- plugins setup
+require("plugins/onedark")
+require("plugins/lualine")
+require("plugins/bufferline")
+require("plugins/nvim-tree")
+require("plugins/nvim-web-devicons")
+require("plugins/treesitter")
+require("plugins/nvim-cmp")
+require("plugins/lsp")
+require("plugins/comment")
+require("plugins/nvim-autopairs")
+require("plugins/gitsigns")
+require("plugins/telescope")
+require("plugins/toggleterm")
