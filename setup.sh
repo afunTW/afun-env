@@ -14,13 +14,6 @@ sudo apt install -y \
 sudo apt install -y bat
 
 # ##############################
-# IDE
-# ##############################
-/bin/bash scripts/install_nvm.sh
-nvm install node
-/bin/bash scripts/install_nvim.sh
-
-# ##############################
 # Development
 # ##############################
 sudo apt install -y build-essential python-openssl python3-pip
